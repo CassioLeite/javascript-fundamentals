@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Reviewing JavaScript Fundamentals</title>
+	<link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+	<div class="header">
+		<h1 id="headling">JavaScript Fundamentals</h1>
+		<p>Hello, my name is Cássio de Góes</p>
+		<!-- Ex5 <p id="date" onmouseover="displayDate()" onmouseout="hideDate()">Date</p> -->
+		<p id="time"></p> 
+		
+	</div>
+
+	<div class="container">
+		<!-- Ex0 <button onclick="this.innerHTML = 'You clicked!'">Click me</button> -->
+		<!-- Ex1 <button onclick="doClick()">Click me</button> -->
+		<!-- Ex2 <button onclick="changeInnerText(this)">Click me</button> -->
+		<!-- Ex3 <button onclick="changeHeadling()">Click me</button> -->
+		<!-- Ex4 <button onclick="showDate()">Click me</button> -->
+	</div>
+
+	<script type="text/javascript">
+		// Events
+
+		// Ex1
+		//function doClick(){
+		//	alert('You really clicked!');
+		//	document.getElementsByTagName('button')[0].innerHTML = 'You\'ve clicked once';
+		//}
+
+		// Ex2
+		//function changeInnerText(id){
+		//	id.innerHTML = 'You\'ve clicked once!';
+		//}
+
+		// Ex3
+		//function changeHeadling(){
+		//	document.getElementById('headling').innerHTML = 'Let\'s learn Node.js too!';
+		//}
+
+		// Ex4
+		//function showDate(){
+		//	var date = new Date();
+		//	document.getElementById('time').innerHTML = date.toDateString();
+		//	//document.getElementById('time').innerText = Date();
+		//}
+
+		// Ex5
+		//function displayDate(){
+		//	var date = new Date();
+		//	document.getElementById('date').innerHTML = date.toDateString();
+		//}
+
+		//function hideDate(){
+		//	document.getElementById('date').innerHTML = 'Date';
+		//}
+
+
+	</script>
+	<script type="text/javascript">
+		// Number
+		// String
+		// Array
+		// Object
+
+		// letters, numbers, underscores, dollar signs
+		// begin with a letter
+		// can begin also with _ or  $
+		// var $cassio = 'Cásiso' or var _cassio = 'Cássio' 
+		
+		// Case sensitive
+		//var test = 'This is a test';
+		//var Test = 'This is another test';
+		//alert(test);
+		//alert(Test);
+
+		// Camel case
+		//var myFavoriteNumber;
+
+		// Partial case
+		//var MyFavoriteNumber;
+
+		// Underscore
+		//var my_favorite_number; 
+
+		// Number
+		// Will do math stuff 
+		//var number1 = 35; 
+		//var number2 = 40;
+		//alert(number1 + number2);
+
+		// String
+		// Will concatenate
+		//var number1 = '35'; 
+		//var number2 = '40';
+		//alert('My favorite number is: ' + number1 + number2);
+
+		// Array
+		//var colors = ['Red', 'Blue', 'Yellow', 'Green'];
+		//alert(colors);
+		//console.log(colors);
+		//alert('My favorite color is: ' + colors[3] + ('because I\'m a Palmeiras\' supporter'));
+
+		//var animals = new Array('Dog', 'Cat', 'Snake');
+		//alert(animals);
+		//animals[3] = 'Eagle';
+		//alert('It should display "eagle" : ' + animals[3]);
+		//animals.push('Spider');
+		//alert('It should display "spider" : ' + animals[4]);
+		//alert(animals);
+
+		//var numbers = [10, 20, 30, 40, 'Fifty', 8];
+		//alert(numbers);
+		//alert(numbers[0] + numbers[1]);
+		//alert('Array length: ' + numbers.length);
+		//alert('Sorting.. : ' + numbers.sort());
+		//alert('Reversing.. : ' + numbers.reverse());
+
+		// For, While and ForEach Loops
+
+		//for(var i = 0; i < 10; i++){
+		//	console.log('I\'m in a kinda of for loop.. ' + i);
+		//}
+
+		//var i = 0
+		//while(i < 10){
+		//	console.log('I\'m in a kinda of while loop.. '+ i);
+		//	i++;
+		//}
+
+		//var magicNumbers = [35, 67, 89, 43, 78];
+		//magicNumbers.forEach(function(magicNumber){
+		//	console.log('Displaying the magic number... ' + magicNumber);
+		//});
+
+		//for(var j = magicNumbers.length -1 ; j >  0; j--){
+		//	console.log('Reversed:  ' + magicNumbers[j]);
+		//}
+
+		// Conditionals
+		//var sunnyDay = true;
+		//var luckyNumber = '93';
+		//if(sunnyDay){
+		//	console.log('Let\'s stroll through the park!');
+		//}else{
+		//	console.log('Let\'s code!');
+		//}
+
+		//if(sunnyDay && luckyNumber === 93){
+		//	console.log('You really guessed!');
+		//}else{
+		//	console.log('Think man, "93" is not even a number type here! You know... My game, my rules ._.');
+		//}
+
+		// Switch statement	
+
+		//var fruit = 'apple';
+		//switch(fruit){
+		//	case 'banana':
+		//		alert('I hate bananas');
+		//		break;
+		//	case 'apple':
+		//		alert('I love apples');
+		//		break;
+		//	default: 
+		//		alert('Fruits are really good!');
+		//		break;
+		//}
+
+		// Object Literal
+		
+		/*
+		var person = {
+			firstName: 'Cássio',
+			lastName: 'Leite',
+			age: 'I\'ll not tell ya :P',
+			children: ['Carol', 'Miguel', 'Elen', 'Just kidding, I do not have kids'],
+			address:{ // another object inside it
+				street: '555 Something st',
+				city: 'Neverland',
+				state: 'NL'
+			},
+			fullName: function(){ // functions inside an object
+				return this.firstName + ' ' + this.lastName;
+			}, 
+			completeAddress: function(){
+				return this.address.street + ' , ' + this.address.city + ' - ' + this.address.state;
+			}
+		}
+
+		var forReal = person.children.pop();
+		console.log('Name: ' + person.fullName());
+		console.log('Address: ' + person.completeAddress());
+		console.log('Children:');
+		person.children.forEach(function(child){
+			console.log('-' + child);
+		});
+		console.log('Seriously: ' + forReal);
+		*/
+
+		// Object constructor
+
+		//var apple = new Object();
+		//apple.color = 'RED';
+		//apple.shape = 'ROUND';
+
+		//apple.describe = function (){
+		//	return 'Color ' + this.color + ' and Shape ' + this.shape;
+		//}
+
+		//console.log(apple.describe());
+
+		// Constructor pattern
+
+		/*
+		function Fruit(name, color, shape){
+			this.name  = name;
+			this.color = color;
+			this.shape = shape;
+
+			this.description = function(){
+				return 'Name: '  + this.name + ' - Color: ' + this.color + ' - Shape: ' + this.shape;   
+			}
+		}
+
+		var apple = new Fruit('Apple', 'Red', 'Round');
+		var lemon = new Fruit('Lemon', 'Green', 'Round');
+		console.log(apple.description());
+		console.log(lemon.description());
+		*/
+
+		// Array of Objects
+
+		/*
+		var users = [	
+			{
+				name: 'John Doe',
+				age: 30
+			},
+			{
+				name: 'Will Smith',
+				age: 39
+			},
+			{
+				name: 'Shelly Williams',
+				age: 21
+			}
+		];
+
+		console.log(users[1]);
+		console.log(users[1].name);
+		*/
+	</script>
+</body>
+</html>
