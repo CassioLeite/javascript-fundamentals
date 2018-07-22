@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>JavaScript Fundamentals - Working with forms</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="header">
+		<h1 id="headling">JavaScript Fundamentals - Forms</h1>
+		<p>Hello, my name is Cássio de Góes</p>
+	</div>
+
+	<div class="container">
+		<form method="post" action="something.php" name="myForm" onsubmit="return validateForm()">
+			<div>
+				<label>First Name</label>
+				<input type="text" name="firstName" id="firstName">
+			</div>
+			<br>
+			<div>
+				<label>Last Name</label>
+				<input type="text" name="lastName" id="lastName">
+			</div>
+			<br>
+			<div>
+				<label>Color</label>
+				<select name="color" id="color" onchange="changeTitleColor(this)">
+					<option value="red">Red</option>
+					<option value="blue">Blue</option>
+					<option value="green">Green</option>
+				</select>
+			</div>
+			<br>
+			<input type="submit" name="Submit" />
+		</form>
+	</div>
+	<script type="text/javascript">
+		function changeTitleColor(x){
+			// console.log(x.value);
+			document.getElementById('headling').style.color = x.value;
+		}
+
+
+		// simple validation
+		function validateForm(){
+			var firstName = document.forms['myForm']['firstName'].value;
+			
+			if(firstName == null || firstName == ''){
+				alert('The first name is required!');
+				return false;
+			}
+
+			if(firstName.length < 3){
+				alert('The first name is required!');
+				return false;
+			}
+		}
+		
+	</script>
+</body>
+</html>
